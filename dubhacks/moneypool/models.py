@@ -3,7 +3,9 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class User(models.Model):
-    username = models.CharField(blank=False, unique=True, max_length=100)
+    userid = models.IntegerField(blank=False, unique=True)
+    name = models.CharField(blank=False, max_length=100)
+    email = models.EmailField(blank=False)
 
 
 class Request(models.Model):
