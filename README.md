@@ -1,2 +1,3 @@
-# moneypool
-dubhacks 20 projects
+HaikuJar\
+Backend: Node, Express, MongoDB\
+Frontend: React
