@@ -9,4 +9,5 @@ class User(models.Model):
 class Request(models.Model):
     amount = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(10000)])
     message = models.CharField(blank=False, max_length=1000)
-    user = models.ForeignKey('User', on_delete=models.CASCADE, related_name='request')
+    active = models.BooleanField(blank=False)
+    user = models.ForeignKey('User', on_delete=models.CASCADE, related_name='requests')

@@ -12,3 +12,13 @@ class RequestView(APIView):
     def get(self, request):
         data = [{'user': req.user.username, 'amount': req.amount, 'message': req.message} for req in Request.objects.all()]
         return Response(data)
+    
+    def post(self, request):
+        data = request.data
+        username = data.get('username')
+        amount = data.get('amount')
+        message = data.get('message')
+        user = User.objects.get(username=username)
+        Request.objects.create(user=user, amount=amount, message=message, active=True)
+
+        return Response(status=200)
