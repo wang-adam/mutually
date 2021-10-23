@@ -37,14 +37,11 @@ class RequestView(APIView):
         userid = data.get('userid')
         amount = data.get('amount')
         message = data.get('message')
-<<<<<<< HEAD
-        user = User.objects.get(username=username)
+        user = User.objects.get(userid=userid)
         active_requests = Request.objects.get(user=user, active=True)
         if len(active_requests) != 0: 
            return Response(status=400) 
-=======
-        user = User.objects.get(userid=userid)
->>>>>>> 73991385ab87badaab8b10376b2b6053b3a6f8fd
+    
         Request.objects.create(user=user, amount=amount, message=message, active=True)
-        
+
         return Response(status=200)
