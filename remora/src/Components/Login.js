@@ -10,10 +10,6 @@ const clientId = process.env.REACT_APP_OAUTH_CLIENT_ID;
 function Login() {
   const onSuccess = (res) => {
     console.log('Login success: currentUser:', res.profileObj);
-    alert(
-      `Logged in successfully. Welcome ${res.profileObj.name}! \n`
-    );
-    // refreshTokenSetup(res);
   };
 
   const onFailure = (res) => {
