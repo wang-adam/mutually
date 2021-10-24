@@ -18,7 +18,7 @@ export default class Contribute extends Component {
 
 					<Form.Group className="mb-3" controlId="message" style={{paddingBottom: '25px'}}>
 						<Form.Label>Message</Form.Label>
-						<Form.Control type="text" placeholder="text" />
+						<Form.Control type="text" placeholder="Optional" />
 					</Form.Group>
 					<Button variant="primary" type="submit">
 						Proceed to payment
