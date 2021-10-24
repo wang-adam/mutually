@@ -13,6 +13,7 @@ class Request(models.Model):
     amount = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(10000)])
     message = models.CharField(blank=False, max_length=1000)
     active = models.BooleanField(blank=False, default=True)
+    accepted = models.BooleanField(blank=False, default=False)
     timestamp = models.DateTimeField(blank=False)
     vote_count = models.PositiveIntegerField(blank=False, default=0)
     vote_value = models.IntegerField(blank=False, default=0)
