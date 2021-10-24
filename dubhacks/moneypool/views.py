@@ -4,10 +4,10 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics
 from datetime import datetime, timezone
-from moneypool.models import User, Request, Donation, Vote
+from moneypool.models import User, Request, Donation, Vote, Fund
 from moneypool.validation import get_validated_id, get_vote_weight, get_vote_threshold
 from moneypool.payment import pay_request
-from moneypool.serializers import UserSerializer, RequestSerializer, DonationSerializer, VoteSerializer
+from moneypool.serializers import UserSerializer, RequestSerializer, DonationSerializer, VoteSerializer, FundSerializer
 
 
 class UserView(APIView):
@@ -217,3 +217,13 @@ class VoteView(APIView):
                     pay_request(req)
         
         return Response(status=200)
+
+
+class FundView(APIView):
+    """
+    View to interact with Funds
+    """
+
+    def get(self, request):
+        data = FundSerializer(Fund.objects.all()[0]).data
+        return Response(data)

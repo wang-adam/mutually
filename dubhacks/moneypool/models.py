@@ -36,3 +36,7 @@ class Vote(models.Model):
     user = models.ForeignKey('User', on_delete=models.CASCADE, related_name='votes')
     weight = models.PositiveIntegerField(blank=False, default=1)
     value = models.IntegerField(choices=VoteChoices.choices)
+
+
+class Fund(models.Model):
+    balance = models.PositiveIntegerField()
