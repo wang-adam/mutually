@@ -1,3 +1,3 @@
 mutually - dubhacks 2021
 
-The democratic mutual aid platform for all.
+use 'npm run start' to start the development server on localhost:3000
