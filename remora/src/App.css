@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+p,
+a {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", sans-serif;
+  font-size: 1.5vmax;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.about{
+  height: 98vh;
+  object-fit:cover;
+}
+
+.title{
+  margin-top: 10vh;
+  font-size: 5vmax;
+  color: white;
+}
+
+.text{
+  color: white;
+}
+
+
