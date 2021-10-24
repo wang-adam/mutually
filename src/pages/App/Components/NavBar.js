@@ -11,7 +11,6 @@ export default class User extends Component {
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/">Home</a></li>
-                        <li><a href="#/explore">Explore Funds</a></li>
                         <li><a href="#/requests">Request</a></li>
                         <li><a href="#/contribute">Contribute</a></li>
                         <li><a href="#/vote">Vote</a></li>
