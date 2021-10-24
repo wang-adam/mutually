@@ -27,8 +27,8 @@ class App extends Component {
 
 
         <div className="g-signin2" data-onsuccess="onSignIn"></div>
-        <p className="explore-funds">About the Fund</p>
-        <p className="fund-text">We are currently developing funds catered to specific community needs, but our primary fund is aimed for providing accessible financial assistance to those in need, given to those in the community.</p> 
+        <p className="explore-funds" style={{marginTop: '30px'}}>About the Fund</p>
+        <p className="fund-text" style={{marginLeft: '125px', marginRight: '125px', marginBottom: '50px'}}>We are currently developing funds catered to specific issues, but our primary fund aims to connect people to the community resources they need: for the purposes of advancing social equity, healthcare equity, and diversity and inclusion.</p> 
         <Link to="/requests">
           <button className="button" style={{ backgroundColor: "rgb(62, 139, 255)"}}>Request</button>
         </Link>
