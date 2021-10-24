@@ -91,7 +91,7 @@ class RequestView(APIView):
                 message: request message
         """
         data = request.data
-        auth_token = data.auth_token
+        auth_token = data.get('auth_token')
 
         try:
             idinfo = get_validated_id(auth_token)
@@ -150,7 +150,7 @@ class DonationView(APIView):
                 message: (opt) donation message
         """
         data = request.data
-        auth_token = data.auth_token
+        auth_token = data.get('auth_token')
         try:
             idinfo = get_validated_id(auth_token)
         except ValueError:
