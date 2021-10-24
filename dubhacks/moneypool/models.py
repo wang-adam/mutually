@@ -3,10 +3,10 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class User(models.Model):
-    userid = models.IntegerField(blank=False, unique=True, primary_key=True)
+    userid = models.CharField(blank=False, unique=True, primary_key=True, max_length=30)
     name = models.CharField(blank=False, max_length=100)
     email = models.EmailField(blank=False)
-    contribution = models.PositiveIntegerField(blank=False)
+    contribution = models.PositiveIntegerField(blank=False, default=0)
 
 
 class Request(models.Model):
@@ -36,3 +36,7 @@ class Vote(models.Model):
     user = models.ForeignKey('User', on_delete=models.CASCADE, related_name='votes')
     weight = models.PositiveIntegerField(blank=False, default=1)
     value = models.IntegerField(choices=VoteChoices.choices)
+
+
+class Fund(models.Model):
+    balance = models.PositiveIntegerField()
