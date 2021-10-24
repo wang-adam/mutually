@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Router, Route } from 'react-router';
+import { HashRouter, Router, Route } from 'react-router-dom';
+
+import App from './App';
 import NotFound from './Pages/notfound.js';
 import Requests from './Pages/requests.js';
 import Contribute from './Pages/contribute.js';
@@ -21,7 +22,9 @@ const Routes = (props) => (
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <HashRouter>
+      <App />
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
