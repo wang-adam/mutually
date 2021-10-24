@@ -8,6 +8,8 @@ import App from './App';
 import Requests from './Pages/requests.js';
 import Contribute from './Pages/contribute.js';
 import Vote from './Pages/vote.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Routes = (props) => (
   <HashRouter {...props}>

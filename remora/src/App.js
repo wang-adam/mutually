@@ -12,12 +12,12 @@ class App extends Component {
           style={{backgroundColor:'rgb(62, 139, 255)', textAlign:'center', padding:'1% 5%', textAlign: 'justify' }}>
           <div className="box"></div>
           <p className="title" style={{textAlign:'center'}}>mutu  ally</p>
-        <p className="moto" style={{ textAlign: 'center' }}>The democratic mutual aid platform for everyone.</p>
-          <p className="text" style={{ textAlign: 'left', textIndent: '3vw'}}>
+        <p className="moto" style={{ textAlign: 'center' }}>The democratic mutual aid platform for all.</p>
+          <p className="text" style={{ textAlign: 'left'}}>
             Beneficiaries - In need of financial assistance? Mutually is the mutual aid platform where you can receive funding directly right from the community.
              Simply fill out a request with your needs.
           </p>
-          <p className="text" style={{ textAlign: 'left', textIndent: '3vw', marginTop: "4vh" }}>
+          <p className="text" style={{ textAlign: 'left', marginTop: "4vh" }}>
             Contributors - We believe you should have a voice in where your donations go. Each fund has a tiered voting system based on the amount you contribute. The more you contribute, the more your voice counts. Each contributor can vote on whether they would like to support a beneficiary's request or not.
           </p>
           

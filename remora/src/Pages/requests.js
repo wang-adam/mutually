@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import NavBar from '../Components/NavBar';
 import { GoogleLogin } from 'react-google-login';
 import { gapi } from 'gapi-script';
+import { Button, Form } from 'react-bootstrap';
 
 export default class Requests extends Component {
 	constructor(props) {
@@ -44,23 +45,22 @@ export default class Requests extends Component {
 
 	render() {
 		return (
-			<div>
-				{/* <NavBar></NavBar> */}
-				<h1>Make an Aid Request</h1>
-				<div className = "requestForm">
-					<form onSubmit={this.handleSubmit}>
-						<div class="form-group">
-							<label htmlFor="dollarsRequested">Aid Requested</label>
-							<input name = "dollarsRequested" type="number" min="0.01" step="0.01" max="500000"
-							id="dollarsRequested" placeholder="USD" value={this.state.dollarsRequested} onChange={this.handleInputChange} required />
-						</div>
-						<div class="form-group">
-							<label htmlFor="requestDescription">Description</label>
-							<textarea name = "description" rows="3" placeholder="Tell the community about your situation and need for funding" value={this.state.description} onChange={this.handleInputChange} required />
-						</div>
-						<input type="submit" value="Submit"/>
-					</form>
-				</div>
+			<div style={{paddingLeft: '40px', paddingTop: '75px', paddingBottom: '100px', paddingRight: '40px' }}>
+				<h1 style={{paddingBottom: '15px' }}>Request Aid</h1>
+				<Form>
+					<Form.Group className="mb-3" controlId="dollarsContributed">
+						<Form.Label>Amount Requested</Form.Label>
+						<Form.Control type="number" min="0.01" step="0.01" max="500000" placeholder="USD" />
+					</Form.Group>
+
+					<Form.Group className="mb-3" controlId="message" style={{paddingTop: '8px', paddingBottom: '30px'}}>
+						<Form.Label>Your Message</Form.Label>
+						<Form.Control type="text" placeholder="Tell the community about your situation and need for funding" />
+					</Form.Group>
+					<Button variant="primary" type="submit">
+						Submit request
+					</Button>
+				</Form>
 			</div>
 		);
 	}
