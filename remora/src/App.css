@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: rgb(62, 139, 255);
 }
 
 @keyframes App-logo-spin {
@@ -47,18 +47,43 @@ a {
 }
 
 .about{
-  height: 98vh;
+  height: 45vmax;
   object-fit:cover;
+  color: white;
 }
 
 .title{
   margin-top: 10vh;
   font-size: 5vmax;
-  color: white;
+  margin-bottom: 0;
 }
 
 .text{
-  color: white;
+  margin-top: 10vh;
 }
 
+.box{
+  border: 0.51vmax solid white;
+  border-radius: 10px;
+  width: 8vw;
+  height: 5vw;
+  position: absolute;
+  top: 13.5vh;
+  right: 38.5vw;
+}
+
+.button {
+  border: none;
+  border-radius: 10px;
+  padding: 15px 15px;
+  margin: 1vw;
+  text-align: center;
+  font-size: 1.5vmax;
+  color:white;
+}
+
+.explore-funds{
+  margin-top: 3vh;
+  font-size:3vmax;
+}
 

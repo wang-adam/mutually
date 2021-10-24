@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import NavBar from '../Components/NavBar';
 
-export default class NotFound extends Component {
+export default class Contribute extends Component {
 	render() {
 		return (
 			<div>
