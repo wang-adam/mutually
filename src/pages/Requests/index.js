@@ -7,7 +7,7 @@ export default class NotFound extends Component {
 		return (
 			<div>
 				<NavBar></NavBar>
-				<h1>Make an Aid Request to a Fund</h1>
+				<h1>Make an Aid Request</h1>
 				<div className = "requestForm">
 					<form>
 						<div class="form-group">

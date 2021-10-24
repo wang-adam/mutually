@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../style.css'
 
-export default class User extends Component {
+export default class NavBar extends Component {
 	render() {
 		return (
 			<nav class="navbar navbar-expand">
