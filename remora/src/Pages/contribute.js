@@ -5,7 +5,7 @@ export default class Contribute extends Component {
 	render() {
 		return (
 			<div>
-				<NavBar></NavBar>
+				{/* <NavBar></NavBar> */}
 				<h1>Contribute to a Fund</h1>
 			</div>
 		);

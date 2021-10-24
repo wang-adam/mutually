@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import NavBar from '../Components/NavBar';
+import { GoogleLogin } from 'react-google-login';
+import { gapi } from 'gapi-script';
 
 export default class Requests extends Component {
 	constructor(props) {
@@ -9,6 +11,7 @@ export default class Requests extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
     }
+
 
     handleInputChange(event) {
         const target = event.target;
@@ -21,26 +24,28 @@ export default class Requests extends Component {
     }
     
     handleSubmit(event) {
-
-		// let id = res.profileObj.googleId;
-		// let token = res.tokenId;
-		// let url = '127.0.0.1:8000/requests';
-		// fetch(url + id).then(response => {
-		// 	if (response.status === 404) {
-		// 		var xhr = new XMLHttpRequest();
-		// 		xhr.open('POST', url);
-		// 		xhr.setRequestHeader('Content-Type', 'application/JSON');
-		// 		xhr.send(JSON.stringify({
-		// 			auth_token: token
-		// 		}));
-		// 	}
-		// })
+		// gapi.auth2.init({client_id: process.env.REACT_APP_OAUTH_CLIENT_ID});
+		let GoogleAuth = window.gapi.auth2.getAuthInstance();
+		let currentUser = GoogleAuth.currentUser;
+		let id = currentUser.profileObj.googleId;
+		let token = currentUser.tokenId;
+		let url = '127.0.0.1:8000/requests/';
+		fetch(url + id).then(response => {
+			if (response.status === 404) {
+				var xhr = new XMLHttpRequest();
+				xhr.open('POST', url);
+				xhr.setRequestHeader('Content-Type', 'application/JSON');
+				xhr.send(JSON.stringify({
+					auth_token: token
+				}));
+			}
+		});
     }
 
 	render() {
 		return (
 			<div>
-				<NavBar></NavBar>
+				{/* <NavBar></NavBar> */}
 				<h1>Make an Aid Request</h1>
 				<div className = "requestForm">
 					<form onSubmit={this.handleSubmit}>
