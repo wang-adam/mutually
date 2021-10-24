@@ -1,3 +1,7 @@
 node_modules/
 .DS_Store
 .env
+env/
+*.sqlite3
+*.pyc
+migrations/

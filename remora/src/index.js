@@ -1,12 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { HashRouter, Router, Route } from 'react-router-dom';
+
+import App from './App';
+import NotFound from './Pages/notfound.js';
+import Requests from './Pages/requests.js';
+import Contribute from './Pages/contribute.js';
+import Vote from './Pages/vote.js';
+
+const Routes = (props) => (
+  <Router {...props}>
+    <Route path="/" component={App} />
+    <Route path="/requests" component={Requests} />
+    <Route path="/contribute" component={Contribute} />
+    <Route path="/vote" component={Vote} />
+    <Route path="*" component={NotFound} />
+  </Router>
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <HashRouter>
+      <App />
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
