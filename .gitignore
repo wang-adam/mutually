@@ -1,0 +1,6 @@
+env/
+**/__pycache/
+.vscode
+*.sqlite3
+**.pyc
+dubhacks/moneypool/migrations/
