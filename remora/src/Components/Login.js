@@ -9,52 +9,52 @@ const clientId = process.env.REACT_APP_OAUTH_CLIENT_ID;
 
 export default class Login extends Component {
   onSuccess(res) {
-    console.log('Login success: currentUser:', res.profileObj);
-    let id = res.profileObj.googleId;
-    let token = res.tokenId
-    let url = 'http://127.0.0.1:8000/users'
-    fetch(url + "/" + id).then(response => {
-        if (response.status === 404) {
-            console.log("creating user with token: " + token);
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', url);
-            xhr.setRequestHeader('Content-Type', 'application/JSON');
-            xhr.send(JSON.stringify({
-                auth_token: token
-            }));
-        }
-    })
+    // console.log('Login success: currentUser:', res.profileObj);
+    // let id = res.profileObj.googleId;
+    // let token = res.tokenId
+    // let url = 'http://127.0.0.1:8000/users'
+    // fetch(url + "/" + id).then(response => {
+    //     if (response.status === 404) {
+    //         console.log("creating user with token: " + token);
+    //         var xhr = new XMLHttpRequest();
+    //         xhr.open('POST', url);
+    //         xhr.setRequestHeader('Content-Type', 'application/JSON');
+    //         xhr.send(JSON.stringify({
+    //             auth_token: token
+    //         }));
+    //     }
+    // })
   };
 
   onFailure = (res) => {
-    console.log('Login failed: res:', res);
-    alert(
-      `Failed to login.`
-    );
+    // console.log('Login failed: res:', res);
+    // alert(
+    //   `Failed to login.`
+    // );
   };
 
   renderButton = (res) => {
-    window.gapi.signin2.render('myGoogleButton',
-      {
-        'scope': 'profile email',
-        'width': 240,
-        'height': 40,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': this.onSuccess(res),
-        'onfailure': this.onFailure(res)
-      });
-  }
+//     window.gapi.signin2.render('myGoogleButton',
+//       {
+//         'scope': 'profile email',
+//         'width': 240,
+//         'height': 40,
+//         'longtitle': true,
+//         'theme': 'dark',
+//         'onsuccess': this.onSuccess(res),
+//         'onfailure': this.onFailure(res)
+//       });
+//   }
 
-  componentDidMount = () => {
-    window.gapi.load('auth2', () => {
-      window.gapi.auth2.init({ client_id: clientId }).then((res) => {
+//   componentDidMount = () => {
+//     window.gapi.load('auth2', () => {
+//       window.gapi.auth2.init({ client_id: clientId }).then((res) => {
 
-          // DO NOT ATTEMPT TO RENDER BUTTON UNTIL THE 'Init' PROMISE RETURNS
-          this.renderButton(res);
+//           // DO NOT ATTEMPT TO RENDER BUTTON UNTIL THE 'Init' PROMISE RETURNS
+//           this.renderButton(res);
 
-      });
-    });
+//       });
+//     });
   }
 
   render() {
