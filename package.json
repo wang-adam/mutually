@@ -18,6 +18,7 @@
     "prop-types": "^15.7.2",
     "ra-data-json-server": "^3.17.2",
     "react": "^15.7.0",
+    "react-bootstrap": "^2.0.0",
     "react-dom": "^15.4.1",
     "react-google-login": "^5.2.2",
     "react-router": "^3.0.0"
