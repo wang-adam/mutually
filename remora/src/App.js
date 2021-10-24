@@ -24,7 +24,7 @@ class App extends Component {
               <div className="card-body">
                 <h5 className="card-title">Fund 1</h5>
                 <p className="card-text">Fund description</p>
-                <a href="#/request" className="btn btn-primary">Request</a>
+                <a href="#/requests" className="btn btn-primary">Request</a>
                 <a href="#/contribute" className="btn btn-success">Contribute</a>
               </div>
             </div>

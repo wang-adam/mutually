@@ -11,20 +11,20 @@ import Contribute from './Pages/contribute.js';
 import Vote from './Pages/vote.js';
 
 const Routes = (props) => (
-  <Router {...props}>
+  <HashRouter {...props}>
     <Route path="/" component={App} />
     <Route path="/requests" component={Requests} />
     <Route path="/contribute" component={Contribute} />
     <Route path="/vote" component={Vote} />
     <Route path="*" component={NotFound} />
-  </Router>
+  </HashRouter>
 );
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
+    <Routes>
       <App />
-    </HashRouter>
+    </Routes>
   </React.StrictMode>,
   document.getElementById('root')
 );
