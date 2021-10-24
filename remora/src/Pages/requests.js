@@ -21,21 +21,20 @@ export default class Requests extends Component {
     }
     
     handleSubmit(event) {
-		// TO DO: fix allllll of this
-        let dataBody = {
-            'name': this.state.name,
-            'desc': this.state.description
-        };
-        const requestOptions = {
-            method: 'POST',
-            body: JSON.stringify(dataBody),
-            headers: { 'Content-Type': 'application/json' }
-        };
-        this.setState(() => this.initialState);
-        return fetch('/api/users/', requestOptions)
-            .then(response => response.json())
-            .then(data => console.log(`Data: ${data}`))
-            // .then(location.replace('/')); reloads the page
+
+		// let id = res.profileObj.googleId;
+		// let token = res.tokenId;
+		// let url = '127.0.0.1:8000/requests';
+		// fetch(url + id).then(response => {
+		// 	if (response.status === 404) {
+		// 		var xhr = new XMLHttpRequest();
+		// 		xhr.open('POST', url);
+		// 		xhr.setRequestHeader('Content-Type', 'application/JSON');
+		// 		xhr.send(JSON.stringify({
+		// 			auth_token: token
+		// 		}));
+		// 	}
+		// })
     }
 
 	render() {

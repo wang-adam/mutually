@@ -6,7 +6,7 @@ export default class NavBar extends Component {
 			<nav class="navbar navbar-expand">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="/">Remora</a>
+                        <a class="navbar-brand" href="/">mutually</a>
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/">Home</a></li>
