@@ -5,7 +5,6 @@ import reportWebVitals from './reportWebVitals';
 import { HashRouter, Router, Route } from 'react-router-dom';
 
 import App from './App';
-import NotFound from './Pages/notfound.js';
 import Requests from './Pages/requests.js';
 import Contribute from './Pages/contribute.js';
 import Vote from './Pages/vote.js';
@@ -16,7 +15,6 @@ const Routes = (props) => (
     <Route path="/requests" component={Requests} />
     <Route path="/contribute" component={Contribute} />
     <Route path="/vote" component={Vote} />
-    <Route path="*" component={NotFound} />
   </HashRouter>
 );
 

@@ -13,11 +13,11 @@ class App extends Component {
           <p className="title" style={{textAlign:'center'}}>mutu  ally</p>
         <p className="moto" style={{ textAlign: 'center' }}>a democratic mutual aid platform for everyone</p>
           <p className="text" style={{ textAlign: 'left', textIndent: '3vw'}}>
-            Beneficiaries: In need of a donation? Mutually is the platform for you, where you can get financial aid right from the community.
-             Simply fill out a request with your needs. Best of luck!
+            Beneficiaries - In need of financial assistance? Mutually is the mutual aid platform where you can receive funding directly right from the community.
+             Simply fill out a request with your needs.
           </p>
           <p className="text" style={{ textAlign: 'left', textIndent: '3vw', marginTop: "4vh" }}>
-          Contributors: We believe you should have a voice in where your donations go. Each fund has a tiered voting system based on the amount you contribute. The more you contribute, the more your voice counts. Each donor can vote whether they want to support a Beneficiaries request or not.
+            Contributors - We believe you should have a voice in where your donations go. Each fund has a tiered voting system based on the amount you contribute. The more you contribute, the more your voice counts. Each donor can vote whether they would like to support a beneficiary's request or not.
           </p>
           
         
