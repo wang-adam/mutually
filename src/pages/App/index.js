@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './style.css';
-import HaikuForm from './Components/HaikuForm';
 import LogoutButton from './Components/LogoutButton';
 import {Link} from 'react-router';
 
@@ -14,9 +13,7 @@ class App extends Component {
         <br></br>
         <LogoutButton />
         <br></br>
-        <Link to="/me">Profile</Link>
-        <br></br>
-        <HaikuForm />
+        <h1>Remora</h1>
       </div>
     );
   }

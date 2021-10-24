@@ -1,3 +1,1 @@
-HaikuJar\
-Backend: Node, Express, MongoDB\
-Frontend: React
+Remora - Dubhacks 2021
