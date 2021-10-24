@@ -11,6 +11,7 @@ def get_validated_id(token):
         # Request validation from Google
         idinfo = id_token.verify_oauth2_token(token, auth_requests.Request(), settings.OAUTH_CLIENT_ID)
         # ID token is valid. Pass info back
+        idinfo['userid'] = str(idinfo.get('sub'))
         return idinfo
 
     except ValueError:

@@ -27,7 +27,7 @@ class UserView(APIView):
                 user = User.objects.get(userid=userid)
                 serialized = UserSerializer(user)
                 return Response(serialized.data)
-            except models.Model.DoesNotExist:
+            except User.DoesNotExist:
                 return Response(status=404)
         else:
             data = [UserSerializer(user).data for user in User.objects.all()]
@@ -35,16 +35,20 @@ class UserView(APIView):
 
     def post(self, request):
         data = request.data
-        auth_token = data.auth_token
+        auth_token = data.get('auth_token')
         try:
             idinfo = get_validated_id(auth_token)
         except ValueError:
             return Response(status=400)
-        userid = idinfo.get('sub')
+        userid = idinfo.get('userid')
         name = idinfo.get('name')
         email = idinfo.get('email')
+
+        print(f'{userid=}, {name=}, {email=}')
         
         User.objects.create(userid=userid, name=name, email=email)
+
+        return Response(status=200)
 
 
 class RequestView(APIView):
@@ -94,7 +98,7 @@ class RequestView(APIView):
         except ValueError:
             return Response(status=400)
 
-        userid = idinfo.get('sub')
+        userid = idinfo.get('userid')
         amount = data.get('amount')
         message = data.get('message')
         now = datetime.now().replace(tzinfo=timezone.utc)
@@ -152,7 +156,7 @@ class DonationView(APIView):
         except ValueError:
             return Response(status=400)
 
-        userid = idinfo.get('sub')
+        userid = idinfo.get('userid')
         amount = data.get('amount')
         message = data.get('message')
         now = datetime.now().replace(tzinfo=timezone.utc)
@@ -181,7 +185,7 @@ class VoteView(APIView):
         except ValueError:
             return Response(status=400)
 
-        userid = idinfo.get('sub')
+        userid = idinfo.get('userid')
         value = data.get('value')
 
         try:
