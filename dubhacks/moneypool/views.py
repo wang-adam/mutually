@@ -4,7 +4,7 @@ from django.db import models
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from datetime import datetime, timezone
-from moneypool.models import User, Request
+from moneypool.models import User, Request, Donation
 from moneypool.validation import get_validated_id
 from moneypool.serializers import UserSerializer, RequestSerializer
 
@@ -80,5 +80,26 @@ class RequestView(APIView):
            return Response(status=400) 
 
         Request.objects.create(amount=amount, message=message, active=True, timestamp=now, user=user)
+
+        return Response(status=200)
+
+class DonationView(APIView):
+    def post(self, request):
+        data = request.data
+        auth_token = data.auth_token
+        try:
+            idinfo = get_validated_id(auth_token)
+        except ValueError:
+            return Response(status=400)
+
+        userid = idinfo.get('sub')
+        amount = data.get('amount')
+        message = data.get('message')
+        try:
+            user = User.objects.get(userid=userid)
+        except models.Model.DoesNotExist:
+            return Response(status=400)
+
+        Donation.objects.create(amount=amount, timestamp=datetime.now(), message=message, user=user)
 
         return Response(status=200)
