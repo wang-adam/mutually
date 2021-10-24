@@ -1,6 +1,8 @@
+node_modules/
+.DS_Store
+.env
 env/
-**/__pycache/
-.vscode
 *.sqlite3
 **.pyc
-dubhacks/moneypool/migrations/
+migrations/
+**/__pycache__/

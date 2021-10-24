@@ -1,2 +1,1 @@
-# moneypool
-dubhacks 20 projects
+Remora - Dubhacks 2021

@@ -1,0 +1,14 @@
+p,
+a {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", sans-serif;
+  font-size: 1.2vmax;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.title{
+    margin-bottom: 1vw;
+    font-size: 4vmax;
+    margin-top: 10vw;
+} 
