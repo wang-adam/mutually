@@ -24,3 +24,14 @@ class Donation(models.Model):
     timestamp = models.DateTimeField(blank=False)
     message = models.CharField(max_length=200)
     user = models.ForeignKey('User', on_delete=models.CASCADE, related_name='donations')
+
+
+class Vote(models.Model):
+    class VoteChoices(models.IntegerChoices):
+        YES = 1
+        NO = -1
+
+    request = models.ForeignKey('Request', on_delete=models.CASCADE, related_name='votes')
+    user = models.ForeignKey('User', on_delete=models.CASCADE, related_name='votes')
+    weight = models.PositiveIntegerField(blank=False, default=1)
+    value = models.IntegerField(choices=VoteChoices.choices)

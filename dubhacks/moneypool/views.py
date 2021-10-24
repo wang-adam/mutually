@@ -1,8 +1,9 @@
+import math
 from django.shortcuts import render
 from django.db import models
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from datetime import datetime
+from datetime import datetime, timezone
 from moneypool.models import User, Request
 from moneypool.validation import get_validated_id
 from moneypool.serializers import UserSerializer, RequestSerializer
@@ -58,7 +59,6 @@ class RequestView(APIView):
 
     def post(self, request):
         data = request.data
-        userid = data.get('userid')
         auth_token = data.auth_token
 
         try:
@@ -69,14 +69,16 @@ class RequestView(APIView):
         userid = idinfo.get('sub')
         amount = data.get('amount')
         message = data.get('message')
+        now = datetime.now().replace(tzinfo=timezone.utc)
         try:
             user = User.objects.get(userid=userid)
         except models.Model.DoesNotExist:
             return Response(status=400)
-        active_requests = Request.objects.get(user=user, active=True)
+
+        active_requests = Request.objects.filter(user=user, active=True)
         if len(active_requests) != 0:  # if the user already has an active request
            return Response(status=400) 
 
-        Request.objects.create(user=user, amount=amount, message=message, active=True, timestamp=datetime.now())
+        Request.objects.create(amount=amount, message=message, active=True, timestamp=now, user=user)
 
         return Response(status=200)
