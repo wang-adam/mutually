@@ -14,7 +14,7 @@ class App extends Component {
           <p className="title" style={{textAlign:'center'}}>mutu  ally</p>
         <p className="moto" style={{ textAlign: 'center' }}>The democratic mutual aid platform for all.</p>
           <p className="text" style={{ textAlign: 'left'}}>
-            Beneficiaries - In need of financial assistance? Mutually is the mutual aid platform where you can receive funding directly right from the community.
+            Beneficiaries - In need of financial assistance? Mutually is the mutual aid platform where you can receive funding directly from the community.
              Simply fill out a request with your needs.
           </p>
           <p className="text" style={{ textAlign: 'left', marginTop: "4vh" }}>
